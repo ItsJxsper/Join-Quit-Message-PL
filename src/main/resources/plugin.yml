@@ -1,0 +1,5 @@
+name: OnlineCafe
+version: '${project.version}'
+main: de.itsjxsper.untitled.OnlineCafe
+api-version: 1.19
+authors: [ItsJxsper]
