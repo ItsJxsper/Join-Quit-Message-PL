@@ -8,9 +8,16 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class QuitListener implements Listener {
 
-    @EventHandler
-    public void onQuit(final PlayerQuitEvent event) {
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void onQuitP(PlayerQuitEvent event){
         final Player player = event.getPlayer();
-        event.setQuitMessage(ChatColor.DARK_BLUE + player.getName() + " Wurde von Gott entfernt");
-    }
+
+        if (event.getPlayer().getName().equalsIgnoreCase("StellFire")){
+            event.setJoinMessage("Gott hat sein Fehler gut gemacht (StellFire)"); //Mo
+        }
+
+    @EventHandler (priority = EventPriority.LOWEST)
+    public void OnQuit(PlayerQuitEvent event){
+       final Player player = event.getPlayer();
+       event.setJoinMessage(ChatColor.DARK_BLUE.toString() + "Wurde von Gott entfernt " + player.getName());
 }
